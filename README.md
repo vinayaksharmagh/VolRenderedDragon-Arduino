@@ -4,6 +4,9 @@ This project was created using modern OpenGL . It performs Volume rendering on g
 (runtime video :https://www.youtube.com/watch?v=erNQNznFXqI&feature=youtu.be )
 
 
+Language Used: C++
+ 
+
 Board used
 
 - Arduino Leonardo
