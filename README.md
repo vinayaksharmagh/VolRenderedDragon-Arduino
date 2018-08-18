@@ -6,6 +6,8 @@ Board used
 
 - Arduino Leonardo
 
+
+
 Components used
 
 -3 x 220 Ohm resistors
@@ -21,6 +23,8 @@ Components used
 -Jumper Wires
 
 
+
+
 External Libruaries used
 
 -GLM
@@ -32,6 +36,8 @@ External Libruaries used
 -ASSIMP
 
 -SerialPort
+
+
 
 
 file info
