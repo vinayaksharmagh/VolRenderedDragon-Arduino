@@ -12,13 +12,13 @@ Board used
 
 Components used
 
--3 x 220 Ohm resistors
+-3 x 220 Ohm resistors (to act as connections of fixed resistance .Jumper wires could also have been used but their use cause a lot of flutuation in potentiometer readings due to changes in their resistance from twists and tangles )
 
--3 x 1000 Ohm resistors
+-3 x 1000 Ohm resistors (as pull down resistors )
 
--3 x Buttons
+-3 x Buttons (to select axis of rotation)
 
--1 x Potentiometer(Trimpot)
+-1 x Potentiometer(or Trimpot) (to rotate model about selected axis)
 
 -Breadboard
 
@@ -58,9 +58,13 @@ file info
 
 -conc.cpp : defines all the concrete classes (inherited from abstract class "abst" ) .This file is critical as it contains various overridden definitions of function "pure" which is binded dynamically from different parts of code in application (This has been done to partition code logically without having to create many different functions) {Yes, I know that dynamic invocation of function is slower than static one but I have done such partition for ease of coding and debugging (just like error handling is done despite its known effects on performance of execution). In the final release code (for building exe), dynamic binding calls can be replaced by corrosponding definitions in conc.cpp}
 
+-dragon_control.ino : Arduino file, it contains code for analysing readings from potentiometer and buttons and transferring them to  Serial Port.
+
 -resfun.cpp : contains definition of various funtions other than member functions of class app. {only a few of these functions have been used in this project (these functions are infact custom abstractions used by coder of this project for his other opengl projects)
 
 -model.cpp : used to extract "Assests" (like vertex coordinates,normals etc) from Assimp data structure
+
+
 
 
 -glad.c : required by GLAD libruary
