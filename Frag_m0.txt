@@ -1,0 +1,14 @@
+//for clearing linked list (so that it can be again filled for new orientation of model)
+
+#version 430 core
+
+layout(binding=0, r32ui) coherent uniform uimage2D head_ptr;
+
+void main()
+{
+	ivec2 loc = ivec2(gl_FragCoord.xy);
+	
+	imageStore(head_ptr,loc, uvec4(0xFFFFFFFF));//store NULL in  all locations
+
+
+}

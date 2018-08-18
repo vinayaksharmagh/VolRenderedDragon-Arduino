@@ -1,0 +1,12 @@
+//for axis lines
+
+#version 430 core
+
+in vec4 color;
+out vec4 col;
+
+void main()
+{
+	col=color;
+
+}

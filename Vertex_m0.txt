@@ -1,0 +1,19 @@
+//for clearing linked list (so that it can be again filled for new orientation of model)
+
+#version 430 core
+
+vec4 arr[4] =vec4[4]( 
+	vec4(1,1,0.5,1),
+	vec4(1,-1,0.5,1),
+	vec4(-1,1,0.5,1),
+	vec4(-1,-1,0.5,1)
+	);
+	
+
+void main()
+{
+
+	gl_Position=arr[gl_VertexID];
+
+}
+

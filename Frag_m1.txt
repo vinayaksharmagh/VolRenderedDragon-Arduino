@@ -1,0 +1,45 @@
+//for filling linked list using fragments corrosponding to model
+
+#version 430 core
+
+layout(binding = 0 , offset=0) uniform atomic_uint count;
+
+layout(binding = 0, r32ui) coherent uniform uimage2D head_ptr; //different uniforms can have same bindings if they are of different types
+
+
+
+struct node
+{
+	vec4 color;
+	float depth;
+	int facing;
+	uint next;
+};
+
+layout (binding=0, std430 ) buffer storage
+{
+
+	node storage_arr[];
+
+};
+
+
+void main()
+{
+	ivec2 loc = ivec2(gl_FragCoord.xy);//getting location on image
+
+	uint i = atomicCounterIncrement(count); //index is 1 less than count so prev count == current index
+
+	uint prev_head = imageAtomicExchange(head_ptr, loc , i); 
+	
+
+
+	storage_arr[i].color = vec4(1,1,1,1);
+	storage_arr[i].depth = gl_FragCoord.z;//recording depth in list
+	storage_arr[i].facing = gl_FrontFacing ? 1 : 0 ;//recording facing in list
+	storage_arr[i].next = prev_head;
+
+	//we are inserting new nodes at the begining of list so next of new node(which will now act as new head) should point to prev header's index
+
+
+}

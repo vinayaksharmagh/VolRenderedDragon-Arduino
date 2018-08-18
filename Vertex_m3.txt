@@ -1,0 +1,37 @@
+//for axis lines
+
+#version 430 core
+
+vec4 arr[6]=vec4[6](
+	vec4(0,0,0,1),
+	vec4(1,0,0,1),
+
+	vec4(0,0,0,1),
+	vec4(0,1,0,1),
+
+	vec4(0,0,0,1),
+	vec4(0,0,1,1)
+
+);
+vec4 c_arr[6]=vec4[6](
+	vec4(0.5,0,0,1),
+	vec4(0.5,0,0,1),
+
+	vec4(0,0.5,0,1),
+	vec4(0,0.5,0,1),
+	
+	vec4(0,0,0.5,1),
+	vec4(0,0,0.5,1)
+);
+
+out vec4 color;
+
+layout (location=3) uniform mat4 composite;
+
+void main()
+{
+
+	gl_Position=composite*arr[gl_VertexID];
+	color=c_arr[gl_VertexID];;
+	composite;
+}

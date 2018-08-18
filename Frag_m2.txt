@@ -1,0 +1,71 @@
+
+//for using /parsing linked list 
+
+#version 430 core
+
+layout(binding=0, r32ui) coherent uniform uimage2D head_ptr;
+
+
+struct node
+{
+	vec4 color;
+	float depth;
+	int facing;
+	uint next;	
+};
+
+
+layout(binding=0 , std430) buffer storage
+{
+	node storage_arr[];
+
+};
+
+
+
+out vec4 color;
+
+uint max_frag=25;
+
+void main()
+{
+	uint frag_count=0;
+	float net_depth=0;
+
+	ivec2 loc = ivec2(gl_FragCoord.xy);//getting location in image
+
+	uint i = imageLoad (head_ptr, loc ).x ; //head pointer value corrosponding to obtained location is loaded and put in i 
+
+	while( i != 0xFFFFFFFF &&  frag_count < max_frag )//traverse list starting from index i
+	{
+		if(storage_arr[i].facing != 0)
+		{
+			net_depth-=storage_arr[i].depth;//if front facing
+		}
+		else
+		{
+			net_depth+=storage_arr[i].depth;//if backfacing
+		}
+
+
+		i = storage_arr[i].next;
+		++frag_count;
+		
+	
+	}
+
+
+	net_depth*=300;
+
+	if(net_depth>0.005)
+	{
+		color= vec4(0,net_depth,0,1);
+	}
+	else//for background color
+	{
+		color= vec4(0.3,0,0.2,1);
+	}
+	
+
+}
+
