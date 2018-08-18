@@ -38,6 +38,10 @@ External Libruaries used
 -SerialPort
 
 
+Model Used
+
+-Stanford dragon
+
 
 
 file info
@@ -73,5 +77,16 @@ file info
 
 
 -Vertex_m3.txt and Frag_m3.txt : shaders responsible for drawing red (X) ,green (Y) , blue (Z) axis lines over model
+
+
+-dragon1.obj : model file
+
+
+-assimp-vc140-mt.dll :put in project folder
+
+
+-glew32.dll :put in project folder
+
+
 
 
