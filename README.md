@@ -1,5 +1,5 @@
 # VolRenderedDragon-Arduino
-This project was created using modern OpenGL and Arduino. It performs Volume rendering on given model (using OIT per-pixel linked list method). At run-time, orientation of volume rendered model can be controlled via Arduino. Quaternions have been used to prevent Gimbal Lock.
+This project was created using modern OpenGL and Arduino. It performs Volume rendering on given model  (using per-pixel linked list). At run-time, orientation of volume rendered model can be controlled via Arduino. Quaternions have been used to prevent Gimbal Lock.
 
 (runtime video :https://www.youtube.com/watch?v=erNQNznFXqI&feature=youtu.be )
 
