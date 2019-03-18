@@ -4,30 +4,9 @@ This project was created using modern OpenGL and Arduino. It performs Volume ren
 (runtime video :https://www.youtube.com/watch?v=erNQNznFXqI&feature=youtu.be )
 
 
+Software Part:
+
 Language Used: C++
- 
-
-Board used
-
-- Arduino Leonardo
-
-
-
-Components used
-
--3 x 220 Ohm resistors (to act as connections of fixed resistance .Jumper wires could also have been used but their use cause a lot of flutuation in potentiometer readings due to changes in their resistance from twists and tangles )
-
--3 x 1000 Ohm resistors (as pull down resistors )
-
--3 x Buttons (to select axis of rotation)
-
--1 x Potentiometer(or Trimpot) (to rotate model about selected axis)
-
--Breadboard
-
--Jumper Wires
-
-
 
 
 External Libruaries used
@@ -95,6 +74,28 @@ file info
 
 
 -glew32.dll :put in project folder
+
+
+Hardware Part:
+
+ 
+Board used
+
+- Arduino Leonardo
+
+Components used
+
+-3 x 220 Ohm resistors (to act as connections of fixed resistance .Jumper wires could also have been used but their use cause a lot of flutuation in potentiometer readings due to changes in their resistance from twists and tangles )
+
+-3 x 1000 Ohm resistors (as pull down resistors )
+
+-3 x Buttons (to select axis of rotation)
+
+-1 x Potentiometer(or Trimpot) (to rotate model about selected axis)
+
+-Breadboard
+
+-Jumper Wires
 
 
 
